@@ -21,6 +21,7 @@ public class KisiBean implements Serializable {
 
     public KisiBean() {
         kisi = new Kisi();
+        kisi.setTema("bluesky");
     }
 
     public Kisi getKisi() {

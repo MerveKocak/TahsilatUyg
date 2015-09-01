@@ -12,7 +12,7 @@ import javax.inject.Named;
 @ViewScoped
 public class DilBean implements Serializable {
 
-    private Locale locale;
+    private Locale locale = FacesContext.getCurrentInstance().getViewRoot().getLocale();
     private String dilKodu;
     private static Map<String, Object> ulkeler;
 
