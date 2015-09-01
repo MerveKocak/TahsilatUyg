@@ -9,11 +9,11 @@
             <supported-locale>en</supported-locale>
         </locale-config>
         <resource-bundle>
-            <base-name>tr.gov.ptt.msj.Messages</base-name>
+            <base-name>tr.gov.ptt.tahsilatuyg.msg.Mesajlar</base-name>
             <var>msg</var>
         </resource-bundle>
         <message-bundle>
-            tr.gov.ptt.msj.ValidationMessages
+            tr.gov.ptt.tahsilatuyg.msg.ValidationMessages
         </message-bundle>
     </application>
 </faces-config>

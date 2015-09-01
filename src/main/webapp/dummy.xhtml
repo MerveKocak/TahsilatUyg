@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>#{msg.title}</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:panel header="#{msg['tahsilatuyg.dummy.panel.header']}"
+                     style="width: 70%;  margin: 0 auto; margin-top: 100px;">
+                <p:growl showDetail="true"/>
+                <p:panelGrid columns="3">
+                    <p:outputLabel value="#{msg['tahsilatuyg.dummy.kullanici']}"
+                                   for="kullanici"/>
+                    <p:inputText value="#{dummyBean.ad}"
+                                 id="kullanici"
+                                 required="true">
+                        <p:ajax event="keyup"
+                                update="kullaniciMsg"/>
+                    </p:inputText>
+                    <p:message for="kullanici"
+                               id="kullaniciMsg"/>
+                    <p:outputLabel value="#{msg['tahsilatuyg.dummy.sifre']}"
+                                   for="sifre"/>
+                    <p:password value="#{dummyBean.sifre}"
+                                id="sifre"
+                                required="true">
+                        <p:ajax event="keyup"
+                                update="sifreMsg"/>
+                    </p:password>
+                    <p:message for="sifre"
+                               id="sifreMsg"/>
+                    <p:outputLabel value=""/>
+                    <p:commandButton value="#{msg['tahsilatuyg.dummy.girisButon']}"
+                                     action="#{dummyBean.sayfayaGit()}"
+                                     update="@form"/>
+                    <p:outputLabel value=""/>
+                </p:panelGrid>
+                <h:commandLink action="#{dilBean.changeLanguage('en')}"
+                               immediate="true"
+                               style="padding: 2px">
+                    <h:graphicImage library="img"
+                                    name="English.png"/>
+                </h:commandLink>
+                <h:commandLink action="#{dilBean.changeLanguage('tr')}"
+                               immediate="true"
+                               style="padding: 2px">
+                    <h:graphicImage library="img"
+                                    name="Turkey.png"/>
+                </h:commandLink>
+            </p:panel>
+        </h:form>
+    </h:body>
+</html>
+
